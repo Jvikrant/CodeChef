@@ -10,11 +10,18 @@ def whoWins():
     
     while t>0:
         n,a,b=map(int,input().split())
-    
-        arr=list(map(int,input().split()))
-        
-        acount,bcount,abcount=0,0,0
-        
+
+        arr=map(int,input().split())
+        abcount,acount,bcount=0,0,0
+        for i in arr:
+            if i%a==0 and i%b==0:
+                abcount+=1
+            elif i%a==0 and i%b!=0:
+                acount+=1
+            elif i%a!=0 and i%b==0:
+                bcount+=1
+ 
+
                 
         
         if acount+abcount%2>bcount:
